@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+h1 {
+  margin-bottom: 15px;
+}
+h2 {
+  margin-bottom: 7px;
+}
+p {
+  opacity: 0.9;
+}
