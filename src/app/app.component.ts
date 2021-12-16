@@ -5,10 +5,16 @@ import { Component } from "@angular/core";
   template: `
     <main>
       <h1>Structural Directives</h1>
-      <section class="banner primary">
+      <section *hideAfter="5000; then placeholder" class="banner primary">
         <h2>Temporary content</h2>
         <p>This layout should disappear in 5 seconds</p>
       </section>
+      <ng-template #placeholder>
+        <section class="banner placeholder">
+          <h2>Placeholder</h2>
+          <p>Here was some content</p>
+        </section>
+      </ng-template>
     </main>
   `,
   styles: [
@@ -21,6 +27,10 @@ import { Component } from "@angular/core";
       .primary {
         color: white;
         background-color: #2e2473;
+      }
+      .placeholder {
+        background-color: #ededed;
+        border: dashed #e0e0e0 2px;
       }
     `,
   ],
