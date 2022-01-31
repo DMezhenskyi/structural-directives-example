@@ -27,13 +27,13 @@ export class HideAfterDirective implements OnInit {
   private _delay = 0;
 
   @Input("hideAfterThen")
-  placeholder: TemplateRef<any> | null = null;
+  placeholder: TemplateRef<HideAfterContext> | null = null;
 
   private context = new HideAfterContext();
 
   constructor(
     private viewContainerRef: ViewContainerRef,
-    private template: TemplateRef<any>
+    private template: TemplateRef<HideAfterContext>
   ) {}
 
   ngOnInit(): void {
@@ -49,4 +49,6 @@ export class HideAfterDirective implements OnInit {
       clearInterval(intervalId);
     }, this._delay);
   }
+
+  static ngTemplateContextGuard(dir: HideAfterDirective, ctx: unknown): ctx is HideAfterContext { return true }
 }
